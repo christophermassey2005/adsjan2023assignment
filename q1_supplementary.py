@@ -28,8 +28,6 @@ R = [
 
 # In[21]:
 
-    
-    
 
 def q1_simple_tests():
     assert(apply_mask(I, J) == R)
@@ -37,5 +35,4 @@ def q1_simple_tests():
     assert(encode(J) == 'B2W1B1W1B1W1B2')
     assert(decode('B1W1B2W5') == I)
     assert(apply_mask_encoded(encode(I), encode(J)) == encode(R))
-
 

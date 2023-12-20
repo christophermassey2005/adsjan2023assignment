@@ -36,6 +36,9 @@ class HashTable():
 # In[6]:
 
 
+
+
+
 def hash_quadratic(d):
     """Inserts keys from the list d into a hash table and
     returns the HashTable which contains the state of the 
@@ -46,6 +49,23 @@ def hash_quadratic(d):
     Uses quadratic probing (see question for details) to resolve 
     collisions.
     """
+
+    h = HashTable(31)
+
+    for key in d:
+        hash_val = (2*key + 11) % 31
+        i = 0
+        while h.lookup(hash_val) != "-":
+            i = i + 1
+            hash_val = (2*key + 11 + i*i) % 31
+        h.add(hash_val, key)
+
+    return h
+
+#D = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]
+
+#h2 = hash_quadratic(D)
+#h2.print_table()
 
 # 2023-12-12 This function stub was named hash_secondary in the previous version
 # of the supplementary material. It has been renamed for consistency with the 
@@ -61,9 +81,24 @@ def hash_double(d):
     collisions.
     """
 
+    h = HashTable(31)
+
+    for key in d:
+        hash_val = (2*key + 11) % 31
+        i = 0
+        while h.lookup(hash_val) != "-":
+            i = i + 1
+            hash_val = 19 - (key % 19)
+        h.add(hash_val, key)
+
+    return h
 
 # In[7]:
 
+D = list(range(31))
+
+h3 = hash_double(D)
+h3.print_table()
 
 # 2023-12-12 The simple tests have been updated to address a problematic test case.
 def test_hash_quadratic():
