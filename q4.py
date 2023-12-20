@@ -1,5 +1,5 @@
 #Initial - not for submission
-
+"""
 def generate_bruckner(n):
     def checkvalid(A, row, col):
         for i in range(col):
@@ -29,9 +29,9 @@ def generate_bruckner(n):
     return result
 
 print(generate_bruckner(3))
-
-
 """
+
+
 def generate_bruckner(n):
     def checkvalid(A, row, col):
         for i in range(col):
@@ -40,13 +40,11 @@ def generate_bruckner(n):
         for i in range(row):
             if A[i][col] == A[row][col]:
                 return False
-            
         return True
     
     def generate(A, index):
         if index == n * n:
-            for row in A:
-                result.append(row[:])
+            result.append([row[:] for row in A])
             return
         
         row = index // n
@@ -58,12 +56,9 @@ def generate_bruckner(n):
             A[row][col] = 0
 
     result = []
-    #for _ in range(n):
-    #    A = [[0] * n]
     A = [[0] * n for _ in range(n)]
     generate(A, 0)
     return result
 
-print(generate_bruckner(3))
+print(generate_bruckner(5))
 
-"""

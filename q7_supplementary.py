@@ -3,11 +3,26 @@
 
 # In[ ]:
 
+#How we would merge 2 lists - for reference
+"""
+def Merge(L1, L2):
+    L = []
+    while L1 and L2:
+        if L1[0] <= L2[0]:
+            L.append(L1.pop(0))
+        else:
+            L.append(L2.pop(0))
+    L.extend(L1)
+    L.extend(L2)
+    return L
+"""
 
 def Merge3Way(L1,L2,L3):
     """ Merge the three lists L1, L2, L3 that are sorted
     in non-increasing order into a new list L that is
     sorted in non-increasing order, and return L """
+
+    L = []
     
 def Merge3Sort(L):
     """ If L has at most three elements, sort L into
