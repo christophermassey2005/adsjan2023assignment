@@ -34,12 +34,14 @@ def Merge3Way(L1,L2, L3):
     #Naive implementation - merge the first two lists, then the third. - Not the most efficient!
 
 
-"""
-L1 = [9, 6, 4, 2, 1]
-L2 = [65, 34, 3]
-L3 = [13, 9, 4, 2, 0]
+
+L1 = [8,6,6,4]
+L2 = [10,7,2,1]
+L3 = [9,5,2]
 
 
 print(Merge3Way(L1, L2, L3))
 
-"""
+
+
+
