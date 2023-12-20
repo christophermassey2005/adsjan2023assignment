@@ -22,7 +22,6 @@ def Merge3Way(L1,L2,L3):
     in non-increasing order into a new list L that is
     sorted in non-increasing order, and return L """
 
-    L = []
     
 def Merge3Sort(L):
     """ If L has at most three elements, sort L into
